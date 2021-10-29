@@ -22,4 +22,4 @@ def calculate_power_for_device(powerstation: PowerStation, device: Point) -> flo
     """
     distance = calculate_distance(powerstation.location, device)
     power = math.pow((powerstation.reach - distance), 2)
-    return 0 if distance > reach else power
+    return 0 if distance > powerstation.reach else power
