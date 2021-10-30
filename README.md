@@ -16,3 +16,15 @@ This can be deployed on AWS via AWS SAM.
 ```bash
 sam deploy
 ```
+
+### Test
+
+```bash
+pytest -v
+```
+
+Test Coverage
+
+```bash
+pytest --cov=./ tests/
+```
