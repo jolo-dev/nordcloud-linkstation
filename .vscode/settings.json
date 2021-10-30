@@ -1,8 +1,8 @@
 {
     "python.formatting.provider": "black",
     "python.linting.enabled": false,
-    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": true,
     "python.formatting.blackPath": "black",
-    "python.pythonPath": ".venv/bin/python",
+    "python.pythonPath": "/home/gitpod/.pyenv/versions/3.8.12/bin/python",
     "editor.formatOnSave": true
 }
