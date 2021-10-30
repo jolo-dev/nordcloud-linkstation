@@ -29,3 +29,11 @@ def test_calculate_closest_powerstation(link_stations, solutions):
 
     for idx, dev in enumerate(devices):
         assert calculate_closest_powerstation(link_stations, dev) == solutions[idx]
+
+
+def test_empty_powerstations():
+    device = Point(10, 10)
+
+    with pytest.raises(ValueError) as e:
+        calculate_closest_powerstation([], device)
+    e.value.args[0] == "List of Powerstation cannot be empty"

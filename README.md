@@ -1,5 +1,7 @@
 # Power calculator for devices
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jolo-dev/nordcloud-linkstation)
+
 This is a calculator which calculates the nearest powerstation for a given point.
 
 ## Development

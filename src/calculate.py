@@ -38,7 +38,11 @@ def calculate_closest_powerstation(
 
     :params device: Point of the device
     :return str
+    :raise ValueError: List of Powerstation cannot be empty
     """
+
+    if len(powerstations) == 0:
+        raise ValueError("List of Powerstation cannot be empty")
 
     best_power = max(
         [
