@@ -3,7 +3,9 @@ tasks:
     command: uvicorn handler:app --reload
 ports:
   - port: 8000
+  - port: 3000
     onOpen: open-preview
 vscode:
   extensions:
     - ms-python.python
+    - dbaeumer.vscode-eslint

@@ -1,40 +1,71 @@
 # Power calculator for devices
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jolo-dev/nordcloud-linkstation)
-
-
 This is a calculator which calculates the nearest powerstation for a given point.
 
-## Development
+## Tech Stack
+
+I went for a full stack application made of
+
+* [NextJS](https://nextjs.org/) for the Frontend
+* [FastAPI](https://fastapi.tiangolo.com/) for the Backend because it has a nice OpenAPI Documentation
+* [Serverless Stack](https://serverless-stack.com/) for deploying infrastructure on AWS
+
+## Getting Started
+
+If you don't wanna pollute your local environment, click below
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jolo-dev/nordcloud-linkstation)
+
+Otherwise follow the instructions below:
 
 ### Prerequisite
 
 * [Python](https://www.python.org/downloads/) (>= 3.8)
-* [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html) for deployment
 * [NodeJS](https://nodejs.org/en/download/) (>= 14.x)
-* [Docker](https://www.docker.com/)
 
-### Libraries
+### Backend
 
-* [FastAPI](https://fastapi.tiangolo.com/) for a nice Swagger Documentation
-* [NextJS](https://nextjs.org/) for the Frontend
-
-## Deployment
-
-This can be deployed on AWS via AWS SAM.
+The backend is written in Python and maybe it is best to create a virtualenvironment first.
 
 ```bash
-sam deploy
+cd backend/
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-### Test
+And now start the backend server
+
+```bash
+uvicorn handler:app --reload
+```
+
+The application should be available on http://localhost:8000.
+
+**Test**
 
 ```bash
 pytest -v
 ```
 
-Test Coverage
+**Test Coverage**
 
 ```bash
 pytest --cov=./ tests/
 ```
+
+### Frontend
+
+To start the frontend, you should start a new terminal and go from the root of this project
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The frontend will run on http://localhost:3000.
+
+## Deployment
+
+We deploy this application on AWS with [Serverless Stack](https://serverless-stack.com/)
