@@ -1,6 +1,11 @@
 tasks:
-  - init: pip install -r requirements_dev.txt
+  - name: Install Backend and Start FastApi
+    init: cd backend && pip install -r requirements_dev.txt
     command: uvicorn handler:app --reload
+  - name: Install Frontend and Start NextJs
+    init: cd frontend && npm install
+    command: npm run dev
+
 ports:
   - port: 8000
   - port: 3000
