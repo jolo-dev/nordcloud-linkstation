@@ -3,6 +3,9 @@ tasks:
     init: |
       npm install -g pnpm
       gp sync-done pnpm # wait following to install pnpm
+  - name: Init Monorepo
+    init: gp sync-await pnpm
+    command: pnpm install
   - name: Install Frontend and Start NextJs
     init: |
       gp sync-await pnpm
