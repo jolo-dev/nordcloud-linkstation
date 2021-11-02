@@ -1,14 +1,25 @@
-import useSWR from 'swr'
-
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import 'animate.css'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export default function Home() {
-  const fetcher = (...args) => fetch(...args).then(res => res.json())
-  const { data, error } = useSWR('/api/10/20', fetcher)
-  console.log(data);
+  const [solutions, setSolutions] = useState([])
+  const devices = [{x: 0, y: 0}, {x: 100, y: 100}, {x: 15, y:10}, {x:18, y:18}]
+  
+  async function fetchData() {
+    const result = await axios.get('api/best-powerstation/10/10')
+    setSolutions(result.data)
+  }
+
+  useEffect(() => {
+    fetchData()
+  },[])
+  
+  console.log(solutions);
+  
   
   return (
     <div className={styles.container}>
