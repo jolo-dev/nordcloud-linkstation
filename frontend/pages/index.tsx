@@ -6,20 +6,19 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 export default function Home() {
-  const [solutions, setSolutions] = useState([])
-  const devices = [{x: 0, y: 0}, {x: 100, y: 100}, {x: 15, y:10}, {x:18, y:18}]
-  
-  async function fetchData() {
-    const result = await axios.get('api/best-powerstation/10/10')
-    setSolutions(result.data)
-  }
+  const [solutions, setSolutions] = useState<string[]>([])
+  const devices = [{ x: 0, y: 0 }, { x: 100, y: 100 }, { x: 15, y: 10 }, { x: 18, y: 18 }]
 
-  useEffect(() => {
-    fetchData()
-  },[])
-  
-  console.log(solutions);
-  
+  async function fetchData(x: number, y: number) {
+      const result = await axios.get<string>(`api/best-powerstation/${x}/${y}`)
+      setSolutions(solutions => [...solutions, result.data])
+    }
+    
+    useEffect(() => {
+      devices.map(async (dev) => {
+        fetchData(dev.x, dev.y)
+      })
+  }, [])
   
   return (
     <div className={styles.container}>
@@ -35,8 +34,8 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-        This is a function that solves the most suitable (with most power) link station for a device at
-given point [x,y].{' '}
+          This is a function that solves the most suitable (with most power) link station for a device at
+          given point [x,y].{' '}
         </p>
 
         <h2>
@@ -49,7 +48,17 @@ given point [x,y].{' '}
             <li>Powerstation(10, 0, 12)</li>
           </ul>
         </p>
-
+        <h2>
+          Solutions for current devices
+        </h2>
+        <p>
+          <ul>
+            {solutions.map(sol => {
+              return (
+                <li key={sol}>{sol}</li>)
+            })}
+          </ul>
+        </p>
       </main>
 
       <footer className={styles.footer}>
