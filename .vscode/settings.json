@@ -6,6 +6,7 @@
     "python.pythonPath": "/home/gitpod/.pyenv/versions/3.8.12/bin/python",
     "eslint.format.enable": true,
     "eslint.lintTask.enable": true,
+    "eslint.nodePath": "./node_modules/eslint",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.fixAll": true

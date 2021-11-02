@@ -1,0 +1,16 @@
+{
+    "extends": "@tsconfig/node14",
+    "include": [
+        "frontend/next.d.ts",
+        "**/*.ts",
+        "**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "moduleResolution": [
+        "node_modules",
+        ".next",
+        "node"
+    ]
+}
