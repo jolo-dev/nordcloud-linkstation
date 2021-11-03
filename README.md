@@ -80,7 +80,7 @@ pnpm install
 pnpm run dev
 ```
 
-The frontend will run on http://localhost:3000.
+The frontend will run on http://localhost:3000. It might happen that you have to refresh the page.
 
 ## Deployment
 
