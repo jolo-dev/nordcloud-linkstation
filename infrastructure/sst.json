@@ -1,5 +1,6 @@
 {
   "name": "infrastructure",
   "region": "eu-central-1",
-  "main": "index.ts"
+  "main": "index.ts",
+  "typeCheck": false
 }

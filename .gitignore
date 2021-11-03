@@ -39,3 +39,7 @@ build
 
 # vercel
 .vercel
+
+# SST
+.sst
+.build

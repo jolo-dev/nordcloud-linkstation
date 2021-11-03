@@ -440,6 +440,7 @@ packages:
       '@aws-cdk/core': 1.130.0
       '@aws-cdk/cx-api': 1.130.0
       constructs: 3.3.161
+      minimatch: 3.0.4
     dev: false
     bundledDependencies:
       - minimatch
@@ -1071,6 +1072,9 @@ packages:
   /@aws-cdk/cloud-assembly-schema/1.130.0:
     resolution: {integrity: sha512-FewdApVM5N4BwNn23VeiIA6EgD6CZP1tV0wZAsxU+xXl4CwsfhyeAsmTVeHvf4+g+N7j5BBp+q2d1bkSesdZWw==}
     engines: {node: '>= 10.13.0 <13 || >=13.7.0'}
+    dependencies:
+      jsonschema: 1.4.0
+      semver: 7.3.5
     dev: false
     bundledDependencies:
       - jsonschema
@@ -1113,7 +1117,11 @@ packages:
       '@aws-cdk/cloud-assembly-schema': 1.130.0
       '@aws-cdk/cx-api': 1.130.0
       '@aws-cdk/region-info': 1.130.0
+      '@balena/dockerignore': 1.0.2
       constructs: 3.3.161
+      fs-extra: 9.1.0
+      ignore: 5.1.8
+      minimatch: 3.0.4
     dev: false
     bundledDependencies:
       - fs-extra
@@ -1149,6 +1157,7 @@ packages:
     engines: {node: '>= 10.13.0 <13 || >=13.7.0'}
     dependencies:
       '@aws-cdk/cloud-assembly-schema': 1.130.0
+      semver: 7.3.5
     dev: false
     bundledDependencies:
       - semver

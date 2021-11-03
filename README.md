@@ -28,7 +28,7 @@ Otherwise follow the instructions below:
 
 ### Backend
 
-The backend is written in Python and maybe it is best to create a virtualenvironment first.
+The backend is written in Python and it is recommended to create a virtualenvironment first.
 
 ```bash
 cd backend/
@@ -66,6 +66,7 @@ Please, [install it before](https://pnpm.io/installation).
 In root folder of this project
 
 ```bash
+npm install -g pnpm
 pnpm install
 ```
 

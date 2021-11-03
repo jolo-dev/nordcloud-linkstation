@@ -67,11 +67,13 @@ export default function Home() {
         <h2>
           Current Position of the Powerstations [x,y,reach]
         </h2>
-        <Scatter
-          width={width}
-          data={powerstation}
-          radius={powerstationReach}
-        />
+        {powerstation && powerstationReach ?
+          <Scatter
+            width={width}
+            data={powerstation}
+            radius={powerstationReach}
+          />
+          : ''}
         <p className={styles.description}>
           <ul>
             <li>Powerstation(0, 0, 10)</li>
