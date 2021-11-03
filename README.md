@@ -28,7 +28,7 @@ Otherwise follow the instructions below:
 
 ### Backend
 
-The backend is written in Python and it is recommended to create a virtualenvironment first.
+The backend is written in Python and it is recommended to create a virtual environment first.
 
 ```bash
 cd backend/
@@ -84,7 +84,9 @@ The frontend will run on http://localhost:3000.
 
 ## Deployment
 
-We deploy this application on AWS with [Serverless Stack](https://serverless-stack.com/)
+We deploy this application on AWS with [Serverless Stack](https://serverless-stack.com/) which is on Top [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/home.html)
+
+Please, make sure you have the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installed and configured.
 
 ```bash
 cd infrastructure

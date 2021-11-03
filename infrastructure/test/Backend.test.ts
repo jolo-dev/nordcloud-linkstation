@@ -1,11 +1,12 @@
 import { expect, haveResource } from "@aws-cdk/assert";
 import * as sst from "@serverless-stack/resources";
-import Frontend from "../stacks/Frontend";
+import Backend from "../stacks/Backend";
 
-test("Test Stack", () => {
+test("Test Backend Stack", () => {
   const app = new sst.App();
   // WHEN
-  const stack = new Frontend(app, "frontend");
+  const stack = new Backend(app, "Backend");
   // THEN
   expect(stack).to(haveResource("AWS::Lambda::Function"));
+  expect(stack).to(haveResource("AWS::ApiGateway::Api"));
 });

@@ -8,6 +8,11 @@ Start by installing the dependencies.
 $ pnpm install
 ```
 
+## Prerequisite
+
+Please, make sure you have the [AWS-CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installed
+and it also configured.
+
 ## Commands
 
 ### `pnpm run start`

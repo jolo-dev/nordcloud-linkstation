@@ -1,6 +1,5 @@
 import * as sst from '@serverless-stack/resources';
 import {Fn, CfnOutput} from '@aws-cdk/core'
-import path from 'path'
 
 export default class FrontendStack extends sst.Stack {
   constructor(scope: sst.App, id: string, props?: sst.StackProps) {
@@ -9,9 +8,9 @@ export default class FrontendStack extends sst.Stack {
     const apiValue = Fn.importValue('ApiEndpoint');
     // Use SST NextJs Construct
     const nextJs = new sst.NextjsSite(this, 'Frontend', {
-      path: path.join(__dirname, '../..', 'frontend'),
+      path: '../frontend',
       environment: {
-        "API_URL": apiValue
+        "FAST_API_URL": apiValue
       }
     });
 
