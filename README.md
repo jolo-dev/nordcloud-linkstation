@@ -2,6 +2,8 @@
 
 This is a calculator which calculates the nearest powerstation for a given point.
 
+![Powerstation Demo]('./assets/Linkstation-Demo.gif')
+
 ## Tech Stack
 
 I went for a full stack application made of
