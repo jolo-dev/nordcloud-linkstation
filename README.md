@@ -16,12 +16,15 @@ If you don't wanna pollute your local environment, click below
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jolo-dev/nordcloud-linkstation)
 
+> **Note:** it might happen that your browser prevents to open a new tab, please allow it for Gitpod.
+
 Otherwise follow the instructions below:
 
 ### Prerequisite
 
 * [Python](https://www.python.org/downloads/) (>= 3.8)
 * [NodeJS](https://nodejs.org/en/download/) (>= 14.x)
+* [PNPM](https://pnpm.io/)
 
 ### Backend
 
@@ -54,14 +57,26 @@ pytest -v
 pytest --cov=./ tests/
 ```
 
+### Monorepo
+
+For this repo, we use a monorepo approach for the Frontend and Infrastructure because both are using Typescript.
+PNPM is a more efficient package manager than NPM or Yarn + supports Monorepo out-of-the-box.
+Please, [install it before](https://pnpm.io/installation).
+
+In root folder of this project
+
+```bash
+pnpm install
+```
+
 ### Frontend
 
 To start the frontend, you should start a new terminal and go from the root of this project
 
 ```bash
 cd frontend
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 The frontend will run on http://localhost:3000.
@@ -69,3 +84,9 @@ The frontend will run on http://localhost:3000.
 ## Deployment
 
 We deploy this application on AWS with [Serverless Stack](https://serverless-stack.com/)
+
+```bash
+cd infrastructure
+pnpm install
+pnpm deploy
+```
