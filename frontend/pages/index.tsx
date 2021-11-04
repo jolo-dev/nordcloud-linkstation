@@ -12,7 +12,7 @@ interface ScatterData {
 }
 
 export default function Home() {
-  const devices = [{ x: 0, y: 0 }, { x: 100, y: 100 }, { x: 15, y: 10 }, { x: 18, y: 18 }]
+  const devices = useCallback(() => [{ x: 0, y: 0 }, { x: 100, y: 100 }, { x: 15, y: 10 }, { x: 18, y: 18 }], [])
 
   const [solutions, setSolutions] = useState<string[]>([])
   const [width, setWidth] = useState<number>(300)
@@ -22,29 +22,29 @@ export default function Home() {
   const fetchData = useCallback(async (x: number, y: number) => {
     const result = await axios.get<string>(`api/best-powerstation/${x}/${y}`)
     setSolutions(solutions => [...solutions, result.data])
-  }, [solutions]);
+  }, []);
 
   const setInnerWidth = useCallback(() => {
     setWidth(window.innerWidth / 2);
-  }, [width])
+  }, [])
 
   const setPowerstationData = useCallback(() => {
-    const x = [0, 20, 10, ...devices.map(dev => dev.x)]
-    const y = [0, 20, 0, ...devices.map(dev => dev.y)]
-    const radius = [10 * 10, 5 * 10, 12 * 10, ...devices.map(dev => 5)]
+    const x = [0, 20, 10, ...devices().map(dev => dev.x)]
+    const y = [0, 20, 0, ...devices().map(dev => dev.y)]
+    const radius = [10 * 10, 5 * 10, 12 * 10, ...devices().map(dev => 5)]
     setPowerstation({ x, y })
     setPowerstationReach(radius)
-  }, [powerstation, powerstationReach])
+  }, [devices])
 
   useEffect(() => {
-    devices.map(async (dev) => {
+    devices().map(async (dev) => {
       fetchData(dev.x, dev.y)
     })
 
     setInnerWidth()
 
     setPowerstationData()
-  }, [])
+  }, [devices, fetchData, setInnerWidth, setPowerstationData])
 
   return (
     <div className={styles.container}>

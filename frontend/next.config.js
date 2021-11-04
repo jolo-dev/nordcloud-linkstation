@@ -1,3 +1,4 @@
+// eslint ignore
 module.exports = {
   reactStrictMode: true,
   async rewrites() {

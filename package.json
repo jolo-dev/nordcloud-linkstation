@@ -4,7 +4,7 @@
   "description": "A Fullstack App to calculate the best power",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint infrastructure frontend --fix"
   },
   "author": "John Nguyen <john_long.nguyen@outlook.com>",
   "devDependencies": {

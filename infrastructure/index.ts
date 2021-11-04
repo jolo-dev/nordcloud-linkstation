@@ -9,6 +9,7 @@ export default function main(app: sst.App): void {
     runtime: "python3.8"
   });
 
-  new BackendStack(app, "backend-stack")
+  new BackendStack(app, "backend-stack");
+  
   new FrontendStack(app, "frontend-stack");
 }
